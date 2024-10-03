@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* App.css */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e1e, #252525);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Ekran taşmalarını engelle */
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;
+  justify-content: space-between; /* Kartlar arasında boşluk bırak */
+  width: 85%; /* Kartların toplam genişliği */
+  gap: 20px; /* Kartlar arasındaki boşluk */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.assistant-card {
+  flex: 1; /* Her kart eşit genişlikte olsun */
+  background-color: rgba(40, 40, 40, 0.9); /* Daha koyu arka plan */
+  padding: 30px; /* İçerik için daha fazla boşluk */
+  border-radius: 12px; /* Daha yumuşak köşeler */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); /* Daha belirgin gölge */
+  min-height: 450px; /* Kartın minimum yüksekliği */
+  overflow: auto; /* Taşmayı önlemek için kaydırma çubuğu */
+  transition: transform 0.3s ease; /* Hover animasyonu için geçiş */
+}
+
+.assistant-card:hover {
+  transform: scale(1.02); /* Hover ile kart büyütme efekti */
+}
+
+h1 {
+  font-size: 2.5rem; /* Başlık boyutu */
+  color: #ffcc00; /* Vurgulu başlık rengi */
+  text-align: center; /* Ortalanmış başlık */
+}
+
+h2 {
+  font-size: 1.8rem; /* İkincil başlık boyutu */
+}
+
+button {
+  margin: 10px 0;
+  padding: 15px 30px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease; /* Geçiş süreleri */
+}
+
+button:hover {
+  background: linear-gradient(135deg, #e64a19, #ff5722);
+  transform: translateY(-3px); /* Hover efektiyle yukarı hareket */
+}
+
+.output {
+  margin-top: 20px;
+  background-color: #292929;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Çıkan kutunun gölgesi */
+  max-height: 200px; /* Maksimum yükseklik */
+  overflow-y: auto; /* Dikey kaydırma çubuğu */
 }
